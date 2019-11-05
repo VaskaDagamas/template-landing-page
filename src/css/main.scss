@@ -1,0 +1,110 @@
+@import "mixin/mixin.scss";
+@import "variables.scss";
+@import "def_css_settings.scss";
+@import "sprite.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.container {
+	width: $width_content;
+	margin: auto;
+}
+
+.flex_container {
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.main_menu {
+	color: $def_black;
+	height: 46px;
+	padding-left: 30px;
+	display: inline-flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+
+	li {
+		display: inline-block;
+		margin-right: 30px;
+
+		a {
+			letter-spacing: 0.4px;
+			color: inherit;
+			text-decoration: none;
+			font-weight: 700;
+			transition: all 0.4s ease;
+			cursor: pointer;
+		}
+
+		a:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.popUP {
+	.back_pop_up {}
+
+	.popup_content {}
+}
+
+.popUP {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0px;
+	@include maxIndex;
+
+	.back_pop_up {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		background: rgba(63, 56, 120, 0.9);
+	}
+
+	.popup_content {
+		padding: 45px;
+		border-radius: $borderR;
+		background-color: $back_color;
+		box-shadow: $def_shadow:;
+		@include PAC;
+		@include maxIndex;
+		width: 800px;
+		overflow: auto;
+		max-height: 669px;
+		max-width: 100%;
+	}
+}
+
+.hidden{
+	overflow: hidden;
+}
+
+header {
+	padding-top: 10px;
+}
+
+footer {
+	background-color: #3E33A0;
+	padding: 28px 0px;
+	color: $def_white;
+
+	.copyright {
+		color: inherit;
+	}
+
+	.contacts {
+		margin-right: 0;
+		color: inherit;
+	}
+
+	.container {
+		@extend .flex_container;
+	}
+}

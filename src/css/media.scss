@@ -1,0 +1,60 @@
+@import "variables.scss";
+$menu_back: #20d3b3;
+
+@media screen and (max-width: $width_content){
+	max-width: 100%;
+	.main_menu{
+		position: absolute;
+		top: 31px;
+		right: -100%;
+		visibility: hidden;
+		padding: 30px 35px 15px 15px;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-align-items: flex-start;
+		        align-items: flex-start;
+		background: $menu_back;
+		height: auto;
+		transition: all 0.4s ease-in;
+		border-radius: 25px 0px 25px 5px;
+		@include maxIndex;
+	}
+	.active{
+		// top: 0px;
+		right: 0px;
+	}
+	.triger_active {
+		top: 51px;
+		div{
+			background: white;
+		}
+        .first {
+		        -webkit-transform: rotate(45deg);
+		        transform: rotate(45deg);
+		        position: absolute;
+		        top: 0;
+
+		}
+		.third {
+		        -webkit-transform: rotate(-45deg);
+		        transform: rotate(-45deg);
+		        position: absolute;
+		        top: 0;
+		}
+		.second {
+		        opacity: 0;;
+		        -webkit-transform: rotate(-180deg);
+		        transform: rotate(-180deg)
+		}
+    }
+@media screen and (min-width: 1500px){
+	.container{
+		max-width: 1920px;
+		margin: auto;
+	}
+
+	.content{
+		padding: 0px 25px;
+	}
+}

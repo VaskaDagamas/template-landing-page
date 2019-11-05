@@ -1,0 +1,125 @@
+/* .example_using_mixin {
+  @include placeholder {
+    color: green;
+  }
+}
+
+.example_using_extend{
+  @extend .scroll;
+  overflow-y:scroll;
+} */
+
+// .example_using_linear-gradient {
+//   @include linear-gradient(hotpink, tomato);
+// }
+
+@mixin @mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    };
+    &:-moz-placeholder {
+        @content
+    };
+    &::-moz-placeholder {
+        @content
+    };
+    &:-ms-input-placeholder {
+        @content
+    };
+}
+
+@mixin when_disabled {
+    &:disabled {
+        border-color: #d7d9dc;
+        opacity: 0.3;
+        cursor: not-allowed;
+        pointer-events: none;
+
+        @include placeholder {
+            color: #9aa0a7;
+        }
+    }
+
+    &:not:hover {}
+}
+
+@mixin link_like_btn {
+    text-decoration: none;
+    @include disabled
+}
+
+.scroll {}
+
+.scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+.scroll::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 11px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+/* Handle */
+.scroll::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #9aa0a7;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+
+
+@mixin clear {
+    content: " ";
+    display: block;
+    clear: both;
+    float: none;
+}
+
+@mixin PAV {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    z-index: 1;
+}
+
+@mixin PAC {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+}
+
+@mixin PFC {
+    position: fixed;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+}
+
+@mixin transAll {
+    transition: all 0.4s ease;
+}
+
+@mixin maxIndex {
+    z-index: 100500;
+}

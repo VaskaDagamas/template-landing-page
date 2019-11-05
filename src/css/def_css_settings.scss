@@ -1,0 +1,26 @@
+@import "mixin/mixin.scss";
+@import "variables.scss";
+
+*{
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    font-size: $def_font_size;
+    color: $def_color_text:;
+    font-family: $def_font;
+    @include when_disabled;
+    @include changeTime;
+}
+
+body{
+	background-color: $back_color;
+}
+
+input:-webkit-autofill {
+	background-color: $back_color;
+}
+

@@ -1,5 +1,5 @@
-var folder_name = '';//current folder name
-var project_name = folder_name + '/';
+var folder_name = '';//current folder name (if we won't use one config for multiple projects)
+var project_name = folder_name ? `${folder_name}/` : '';
 var imgSrc = project_name + 'src/images/**';
 var imgDest = project_name + 'build/images';
 var gulp = require('gulp'),

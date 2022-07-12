@@ -32,17 +32,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "TemplateForLanding"
+    "homepage": "https://github.com/VaskaDagamas/template-landing-page/#readme",
+    "url": "https://github.com/VaskaDagamas/template-landing-page"
   },
   "keywords": [
     "front-end",
     "gulp",
-    "configuraion",
+    "configuration",
     "front",
     "end",
-    "configuration",
     "gulp",
-    "configuration",
     "for",
     "develop"
   ]
